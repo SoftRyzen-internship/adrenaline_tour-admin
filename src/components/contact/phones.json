@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_contact_phones",
+  "info": {
+    "displayName": "phones",
+    "icon": "phone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ua": {
+      "type": "string",
+      "default": "+38 (097) 9021613",
+      "regex": "^\\+38 \\(\\d{3}\\) \\d{7}$",
+      "required": true,
+      "unique": false
+    },
+    "cz": {
+      "type": "string",
+      "default": "+420 (774) 629-006",
+      "regex": "^\\+420 \\(\\d{3}\\) \\d{3}-\\d{3}$",
+      "required": true,
+      "unique": false
+    }
+  }
+}

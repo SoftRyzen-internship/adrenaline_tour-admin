@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tours",
+  "info": {
+    "singularName": "tour",
+    "pluralName": "tours",
+    "displayName": "tour",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "location": {
+      "type": "customField",
+      "options": [
+        "Україна",
+        "Чехія",
+        "Австрія",
+        "Румунія",
+        "Італія"
+      ],
+      "required": true,
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "type": {
+      "type": "customField",
+      "options": [
+        "Похід",
+        "Тури",
+        "Сплави",
+        "Віа-феррата",
+        "Каякінг",
+        "Екскурсії"
+      ],
+      "required": true,
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "duration": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "default": "2 дні / 1 ніч"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 3
+    },
+    "plans": {
+      "displayName": "activity",
+      "type": "component",
+      "repeatable": false,
+      "component": "tour.activity"
+    }
+  }
+}
