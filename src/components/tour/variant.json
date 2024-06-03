@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_tour_variants",
+  "info": {
+    "displayName": "variant",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "Оренда обладнання:"
+    },
+    "included": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

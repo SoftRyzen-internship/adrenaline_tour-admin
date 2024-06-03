@@ -35,11 +35,58 @@ export interface TourActivity extends Schema.Component {
   };
 }
 
+export interface TourRent extends Schema.Component {
+  collectionName: 'components_tour_rents';
+  info: {
+    displayName: 'rent';
+    icon: 'book';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    equipment: Attribute.Text;
+  };
+}
+
+export interface TourServices extends Schema.Component {
+  collectionName: 'components_tour_services';
+  info: {
+    displayName: 'services';
+    icon: 'handHeart';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0429\u043E \u0432\u0445\u043E\u0434\u0438\u0442\u044C \u0443 \u0432\u0430\u0440\u0442\u0456\u0441\u0442\u044C \u0442\u0443\u0440\u0443?'>;
+    item: Attribute.Component<'tour.variant', true>;
+  };
+}
+
+export interface TourVariant extends Schema.Component {
+  collectionName: 'components_tour_variants';
+  info: {
+    displayName: 'variant';
+    icon: 'puzzle';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u041E\u0440\u0435\u043D\u0434\u0430 \u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F:'>;
+    included: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'contact.phones': ContactPhones;
       'tour.activity': TourActivity;
+      'tour.rent': TourRent;
+      'tour.services': TourServices;
+      'tour.variant': TourVariant;
     }
   }
 }

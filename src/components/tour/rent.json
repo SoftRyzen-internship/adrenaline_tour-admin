@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_tour_rents",
+  "info": {
+    "displayName": "rent",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "equipment": {
+      "type": "text"
+    }
+  }
+}

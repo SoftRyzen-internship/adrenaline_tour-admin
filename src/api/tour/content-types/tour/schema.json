@@ -26,31 +26,6 @@
       "unique": true,
       "minLength": 3
     },
-    "location": {
-      "type": "customField",
-      "options": [
-        "Україна",
-        "Чехія",
-        "Австрія",
-        "Румунія",
-        "Італія"
-      ],
-      "required": true,
-      "customField": "plugin::multi-select.multi-select"
-    },
-    "type": {
-      "type": "customField",
-      "options": [
-        "Похід",
-        "Тури",
-        "Сплави",
-        "Віа-феррата",
-        "Каякінг",
-        "Екскурсії"
-      ],
-      "required": true,
-      "customField": "plugin::multi-select.multi-select"
-    },
     "duration": {
       "type": "string",
       "required": true,
@@ -62,11 +37,26 @@
       "required": true,
       "minLength": 3
     },
-    "plans": {
-      "displayName": "activity",
-      "type": "component",
-      "repeatable": false,
-      "component": "tour.activity"
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "tour"
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country",
+      "mappedBy": "tour"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
     }
   }
 }
