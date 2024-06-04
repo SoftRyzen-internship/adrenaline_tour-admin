@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_tour_details_meets",
+  "info": {
+    "displayName": "meet",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Дата і місце зустрічі",
+      "required": true
+    },
+    "location": {
+      "displayName": "location",
+      "type": "component",
+      "repeatable": true,
+      "component": "tour-details.location"
+    }
+  }
+}

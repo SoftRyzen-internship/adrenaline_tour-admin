@@ -10,9 +10,17 @@ export interface ContactPhones extends Schema.Component {
   attributes: {
     ua: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<'+38 (097) 9021613'>;
+      Attribute.SetMinMaxLength<{
+        minLength: 13;
+        maxLength: 13;
+      }> &
+      Attribute.DefaultTo<'+380979021613'>;
     cz: Attribute.String &
       Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 13;
+        maxLength: 13;
+      }> &
       Attribute.DefaultTo<'+420 (774) 629-006'>;
   };
 }
@@ -35,21 +43,42 @@ export interface TourDetailsDifficulties extends Schema.Component {
   };
 }
 
+export interface TourDetailsLocation extends Schema.Component {
+  collectionName: 'components_tour_details_locations';
+  info: {
+    displayName: 'location';
+    icon: 'pinMap';
+  };
+  attributes: {
+    place: Attribute.String;
+  };
+}
+
+export interface TourDetailsMeet extends Schema.Component {
+  collectionName: 'components_tour_details_meets';
+  info: {
+    displayName: 'meet';
+    icon: 'book';
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0414\u0430\u0442\u0430 \u0456 \u043C\u0456\u0441\u0446\u0435 \u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456'>;
+    location: Attribute.Component<'tour-details.location', true>;
+  };
+}
+
 export interface TourDetailsPrice extends Schema.Component {
   collectionName: 'components_tour_details_prices';
   info: {
     displayName: 'price';
     icon: 'database';
-    description: '';
   };
   attributes: {
     title: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'\u0412\u0430\u0440\u0442\u0456\u0441\u0442\u044C'>;
-    description: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-      }>;
+    description: Attribute.String;
   };
 }
 
@@ -117,7 +146,8 @@ export interface TourDetails extends Schema.Component {
     route: Attribute.Component<'tour-details.route'>;
     seasons: Attribute.Component<'tour-details.seasonality'>;
     difficult: Attribute.Component<'tour-details.difficulties'>;
-    price: Attribute.Component<'tour-details.price', true>;
+    price: Attribute.Component<'tour-details.price'>;
+    meet: Attribute.Component<'tour-details.meet'>;
   };
 }
 
@@ -178,6 +208,8 @@ declare module '@strapi/types' {
     export interface Components {
       'contact.phones': ContactPhones;
       'tour-details.difficulties': TourDetailsDifficulties;
+      'tour-details.location': TourDetailsLocation;
+      'tour-details.meet': TourDetailsMeet;
       'tour-details.price': TourDetailsPrice;
       'tour-details.route': TourDetailsRoute;
       'tour-details.seasonality': TourDetailsSeasonality;

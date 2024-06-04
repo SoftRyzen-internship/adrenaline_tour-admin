@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_tour_details_locations",
+  "info": {
+    "displayName": "location",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "place": {
+      "type": "string"
+    }
+  }
+}

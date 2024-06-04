@@ -23,9 +23,16 @@
       "component": "tour-details.difficulties"
     },
     "price": {
+      "displayName": "price",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "tour-details.price"
+    },
+    "meet": {
+      "displayName": "meet",
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.meet"
     }
   }
 }

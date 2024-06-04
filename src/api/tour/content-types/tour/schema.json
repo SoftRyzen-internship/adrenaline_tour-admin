@@ -78,6 +78,11 @@
       "type": "component",
       "repeatable": false,
       "component": "tour.details"
+    },
+    "recommended": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
