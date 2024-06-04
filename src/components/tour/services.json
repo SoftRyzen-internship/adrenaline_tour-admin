@@ -9,12 +9,10 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": false,
-      "default": "Що входить у вартість туру?"
+      "default": "Що входить у вартість туру?",
+      "required": true
     },
-    "item": {
-      "displayName": "variant",
+    "features": {
       "type": "component",
       "repeatable": true,
       "component": "tour.variant"

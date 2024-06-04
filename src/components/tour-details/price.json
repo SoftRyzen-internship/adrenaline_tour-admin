@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_tour_details_prices",
+  "info": {
+    "displayName": "price",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Вартість"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 3
+    }
+  }
+}

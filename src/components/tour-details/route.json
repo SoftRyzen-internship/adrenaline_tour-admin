@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_tour_details_routes",
+  "info": {
+    "displayName": "route",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Маршрут",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 3
+    }
+  }
+}

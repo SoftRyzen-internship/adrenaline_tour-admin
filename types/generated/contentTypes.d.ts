@@ -947,6 +947,10 @@ export interface ApiTourTour extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::tour.tour', 'title'> & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
+    plans: Attribute.Component<'tour.activity'>;
+    services: Attribute.Component<'tour.services'>;
+    rent: Attribute.Component<'tour.rent'>;
+    details: Attribute.Component<'tour.details'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

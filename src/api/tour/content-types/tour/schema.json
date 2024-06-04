@@ -57,6 +57,27 @@
     "date": {
       "type": "date",
       "required": true
+    },
+    "plans": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour.activity"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour.services",
+      "required": false
+    },
+    "rent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour.rent"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour.details"
     }
   }
 }

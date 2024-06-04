@@ -2,16 +2,20 @@
   "collectionName": "components_tour_rents",
   "info": {
     "displayName": "rent",
-    "icon": "book"
+    "icon": "database",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
+      "default": "Оренда обладнання:",
       "required": true
     },
     "equipment": {
-      "type": "text"
+      "type": "text",
+      "required": false,
+      "minLength": 3
     }
   }
 }
