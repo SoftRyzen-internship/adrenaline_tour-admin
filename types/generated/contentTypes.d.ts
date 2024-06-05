@@ -905,6 +905,42 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   };
 }
 
+export interface ApiGalleryGallery extends Schema.CollectionType {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'gallery';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Private &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    images: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPolicyPolicy extends Schema.SingleType {
   collectionName: 'policies';
   info: {
@@ -1036,6 +1072,11 @@ export interface ApiTourTour extends Schema.CollectionType {
     recommended: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    gallery: Attribute.Relation<
+      'api::tour.tour',
+      'oneToOne',
+      'api::gallery.gallery'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1067,6 +1108,7 @@ declare module '@strapi/types' {
       'api::activity.activity': ApiActivityActivity;
       'api::contact.contact': ApiContactContact;
       'api::country.country': ApiCountryCountry;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::policy.policy': ApiPolicyPolicy;
       'api::review.review': ApiReviewReview;
       'api::tour.tour': ApiTourTour;

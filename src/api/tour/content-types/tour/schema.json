@@ -83,6 +83,11 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "gallery": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gallery.gallery"
     }
   }
 }
