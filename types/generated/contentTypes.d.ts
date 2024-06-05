@@ -905,6 +905,42 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   };
 }
 
+export interface ApiPolicyPolicy extends Schema.SingleType {
+  collectionName: 'policies';
+  info: {
+    singularName: 'policy';
+    pluralName: 'policies';
+    displayName: 'policy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    text: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Schema.CollectionType {
   collectionName: 'reviews';
   info: {
@@ -1031,6 +1067,7 @@ declare module '@strapi/types' {
       'api::activity.activity': ApiActivityActivity;
       'api::contact.contact': ApiContactContact;
       'api::country.country': ApiCountryCountry;
+      'api::policy.policy': ApiPolicyPolicy;
       'api::review.review': ApiReviewReview;
       'api::tour.tour': ApiTourTour;
     }
