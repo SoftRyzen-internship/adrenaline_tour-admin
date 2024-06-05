@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_tour_services",
+  "info": {
+    "displayName": "services",
+    "icon": "handHeart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Що входить у вартість туру?",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tour.variant"
+    }
+  }
+}

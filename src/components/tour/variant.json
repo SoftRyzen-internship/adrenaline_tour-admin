@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_tour_variants",
+  "info": {
+    "displayName": "features",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "required": true
+    },
+    "included": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

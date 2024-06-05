@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_tour_activities",
+  "info": {
+    "displayName": "activity",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Чим займемось?",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 3
+    }
+  }
+}

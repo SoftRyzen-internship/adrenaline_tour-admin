@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "default": "adrenaline4you@gmail.com",
+      "required": true,
+      "unique": true
+    },
+    "numbers": {
+      "displayName": "phones",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.phones"
+    }
+  }
+}

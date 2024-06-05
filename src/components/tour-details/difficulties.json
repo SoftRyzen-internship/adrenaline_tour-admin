@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_tour_details_difficulties",
+  "info": {
+    "displayName": "difficulties",
+    "icon": "walk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Рівень складності маршруту",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "minLength": 3
+    }
+  }
+}

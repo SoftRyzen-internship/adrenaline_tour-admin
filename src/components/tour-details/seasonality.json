@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_tour_details_seasonalities",
+  "info": {
+    "displayName": "seasonality",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Сезонність"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 3
+    }
+  }
+}

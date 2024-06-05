@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_tour_details",
+  "info": {
+    "displayName": "details",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "route": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.route"
+    },
+    "seasons": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.seasonality"
+    },
+    "difficult": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.difficulties"
+    },
+    "price": {
+      "displayName": "price",
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.price"
+    },
+    "meet": {
+      "displayName": "meet",
+      "type": "component",
+      "repeatable": false,
+      "component": "tour-details.meet"
+    }
+  }
+}
