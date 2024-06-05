@@ -4,7 +4,8 @@
   "info": {
     "singularName": "review",
     "pluralName": "reviews",
-    "displayName": "review"
+    "displayName": "review",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,7 +27,7 @@
       "required": true,
       "minLength": 3
     },
-    "data": {
+    "date": {
       "type": "date",
       "required": true
     }
