@@ -22,7 +22,8 @@
       "displayName": "phones",
       "type": "component",
       "repeatable": false,
-      "component": "contact.phones"
+      "component": "contact.phones",
+      "required": true
     }
   }
 }

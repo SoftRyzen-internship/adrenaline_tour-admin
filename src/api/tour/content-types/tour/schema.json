@@ -24,18 +24,21 @@
       "type": "string",
       "required": true,
       "unique": true,
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 40
     },
     "duration": {
       "type": "string",
       "required": true,
       "minLength": 3,
-      "default": "2 дні / 1 ніч"
+      "default": "2 дні / 1 ніч",
+      "maxLength": 15
     },
     "description": {
       "type": "text",
       "required": true,
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 220
     },
     "activities": {
       "type": "relation",
@@ -61,23 +64,26 @@
     "plans": {
       "type": "component",
       "repeatable": false,
-      "component": "tour.activity"
+      "component": "tour.activity",
+      "required": true
     },
     "services": {
       "type": "component",
       "repeatable": false,
       "component": "tour.services",
-      "required": false
+      "required": true
     },
     "rent": {
       "type": "component",
       "repeatable": false,
-      "component": "tour.rent"
+      "component": "tour.rent",
+      "required": true
     },
     "details": {
       "type": "component",
       "repeatable": false,
-      "component": "tour.details"
+      "component": "tour.details",
+      "required": true
     },
     "recommended": {
       "type": "boolean",
@@ -85,9 +91,12 @@
       "required": true
     },
     "gallery": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::gallery.gallery"
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

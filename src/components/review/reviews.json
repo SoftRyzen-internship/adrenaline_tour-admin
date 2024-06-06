@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_review_reviews",
+  "info": {
+    "displayName": "reviews",
+    "icon": "emotionHappy",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 65,
+      "minLength": 3
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50,
+      "minLength": 3
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

@@ -10,7 +10,8 @@
     "name": {
       "type": "string",
       "minLength": 3,
-      "required": true
+      "required": true,
+      "maxLength": 60
     },
     "included": {
       "type": "boolean",

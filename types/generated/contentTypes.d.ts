@@ -800,7 +800,7 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    type: Attribute.String &
+    name: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 1;
@@ -845,7 +845,7 @@ export interface ApiContactContact extends Schema.SingleType {
       Attribute.Required &
       Attribute.Unique &
       Attribute.DefaultTo<'adrenaline4you@gmail.com'>;
-    numbers: Attribute.Component<'contact.phones'>;
+    numbers: Attribute.Component<'contact.phones'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -905,7 +905,7 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   };
 }
 
-export interface ApiGalleryGallery extends Schema.CollectionType {
+export interface ApiGalleryGallery extends Schema.SingleType {
   collectionName: 'galleries';
   info: {
     singularName: 'gallery';
@@ -917,11 +917,6 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Private &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-      }>;
     images: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -957,7 +952,9 @@ export interface ApiPolicyPolicy extends Schema.SingleType {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-      }>;
+        maxLength: 60;
+      }> &
+      Attribute.DefaultTo<'\u041F\u041E\u041B\u0406\u0422\u0418\u041A\u0410 \u041A\u041E\u041D\u0424\u0406\u0414\u0415\u041D\u0426\u0406\u0419\u041D\u041E\u0421\u0422\u0406 \u0422\u0410 \u0417\u0410\u0425\u0418\u0421\u0422\u0423 \u041F\u0415\u0420\u0421\u041E\u041D\u0410\u041B\u042C\u041D\u0418\u0425 \u0414\u0410\u041D\u0418\u0425'>;
     text: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -977,7 +974,7 @@ export interface ApiPolicyPolicy extends Schema.SingleType {
   };
 }
 
-export interface ApiReviewReview extends Schema.CollectionType {
+export interface ApiReviewReview extends Schema.SingleType {
   collectionName: 'reviews';
   info: {
     singularName: 'review';
@@ -989,22 +986,14 @@ export interface ApiReviewReview extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String &
+    reviews: Attribute.Component<'review.reviews', true> &
       Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-      }>;
-    text: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-      }>;
-    author: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-      }>;
-    date: Attribute.Date & Attribute.Required;
+      Attribute.SetMinMax<
+        {
+          min: 4;
+        },
+        number
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1041,17 +1030,20 @@ export interface ApiTourTour extends Schema.CollectionType {
       Attribute.Unique &
       Attribute.SetMinMaxLength<{
         minLength: 3;
+        maxLength: 40;
       }>;
     duration: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
+        maxLength: 15;
       }> &
       Attribute.DefaultTo<'2 \u0434\u043D\u0456 / 1 \u043D\u0456\u0447'>;
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
+        maxLength: 220;
       }>;
     activities: Attribute.Relation<
       'api::tour.tour',
@@ -1065,18 +1057,14 @@ export interface ApiTourTour extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::tour.tour', 'title'> & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
-    plans: Attribute.Component<'tour.activity'>;
-    services: Attribute.Component<'tour.services'>;
-    rent: Attribute.Component<'tour.rent'>;
-    details: Attribute.Component<'tour.details'>;
+    plans: Attribute.Component<'tour.activity'> & Attribute.Required;
+    services: Attribute.Component<'tour.services'> & Attribute.Required;
+    rent: Attribute.Component<'tour.rent'> & Attribute.Required;
+    details: Attribute.Component<'tour.details'> & Attribute.Required;
     recommended: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    gallery: Attribute.Relation<
-      'api::tour.tour',
-      'oneToOne',
-      'api::gallery.gallery'
-    >;
+    gallery: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

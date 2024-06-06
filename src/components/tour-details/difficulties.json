@@ -10,11 +10,12 @@
     "title": {
       "type": "string",
       "default": "Рівень складності маршруту",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "string",
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 50
     }
   }
 }

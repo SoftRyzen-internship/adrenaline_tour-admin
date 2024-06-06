@@ -15,7 +15,9 @@
     "title": {
       "type": "string",
       "required": true,
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 60,
+      "default": "ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ"
     },
     "text": {
       "type": "richtext",

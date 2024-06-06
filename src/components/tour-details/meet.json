@@ -8,8 +8,7 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Дата і місце зустрічі",
-      "required": true
+      "default": "Дата і місце зустрічі"
     },
     "location": {
       "displayName": "location",

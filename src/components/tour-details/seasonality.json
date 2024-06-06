@@ -9,12 +9,13 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "Сезонність"
     },
     "description": {
       "type": "string",
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 50
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "reviews",
   "info": {
     "singularName": "review",
@@ -12,24 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
+    "reviews": {
+      "displayName": "reviews",
+      "type": "component",
+      "repeatable": true,
+      "component": "review.reviews",
       "required": true,
-      "minLength": 3
-    },
-    "text": {
-      "type": "text",
-      "required": true,
-      "minLength": 3
-    },
-    "author": {
-      "type": "string",
-      "required": true,
-      "minLength": 3
-    },
-    "date": {
-      "type": "date",
-      "required": true
+      "min": 4
     }
   }
 }

@@ -10,12 +10,13 @@
     "title": {
       "type": "string",
       "default": "Оренда обладнання:",
-      "required": true
+      "required": false
     },
     "equipment": {
       "type": "text",
       "required": false,
-      "minLength": 3
+      "minLength": 3,
+      "maxLength": 200
     }
   }
 }

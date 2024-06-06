@@ -7,7 +7,9 @@
   "options": {},
   "attributes": {
     "place": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 3
     }
   }
 }

@@ -10,12 +10,14 @@
     "title": {
       "type": "string",
       "default": "Що входить у вартість туру?",
-      "required": true
+      "required": false
     },
     "features": {
       "type": "component",
       "repeatable": true,
-      "component": "tour.variant"
+      "component": "tour.variant",
+      "required": true,
+      "min": 1
     }
   }
 }

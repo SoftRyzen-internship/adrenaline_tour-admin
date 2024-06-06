@@ -2,17 +2,21 @@
   "collectionName": "components_tour_details_prices",
   "info": {
     "displayName": "price",
-    "icon": "database"
+    "icon": "database",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": "Вартість"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": false,
+      "minLength": 3,
+      "maxLength": 50
     }
   }
 }

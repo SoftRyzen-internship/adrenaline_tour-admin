@@ -10,29 +10,34 @@
     "route": {
       "type": "component",
       "repeatable": false,
-      "component": "tour-details.route"
+      "component": "tour-details.route",
+      "required": true
     },
     "seasons": {
       "type": "component",
       "repeatable": false,
-      "component": "tour-details.seasonality"
+      "component": "tour-details.seasonality",
+      "required": true
     },
     "difficult": {
       "type": "component",
       "repeatable": false,
-      "component": "tour-details.difficulties"
+      "component": "tour-details.difficulties",
+      "required": true
     },
     "price": {
       "displayName": "price",
       "type": "component",
       "repeatable": false,
-      "component": "tour-details.price"
+      "component": "tour-details.price",
+      "required": true
     },
     "meet": {
       "displayName": "meet",
       "type": "component",
       "repeatable": false,
-      "component": "tour-details.meet"
+      "component": "tour-details.meet",
+      "required": true
     }
   }
 }
