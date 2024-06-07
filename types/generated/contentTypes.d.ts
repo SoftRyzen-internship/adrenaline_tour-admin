@@ -1059,7 +1059,7 @@ export interface ApiTourTour extends Schema.CollectionType {
     date: Attribute.Date & Attribute.Required;
     plans: Attribute.Component<'tour.activity'> & Attribute.Required;
     services: Attribute.Component<'tour.services'> & Attribute.Required;
-    rent: Attribute.Component<'tour.rent'> & Attribute.Required;
+    rent: Attribute.Component<'tour.rent'>;
     details: Attribute.Component<'tour.details'> & Attribute.Required;
     recommended: Attribute.Boolean &
       Attribute.Required &

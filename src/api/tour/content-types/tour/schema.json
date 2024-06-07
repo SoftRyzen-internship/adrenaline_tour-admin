@@ -77,7 +77,7 @@
       "type": "component",
       "repeatable": false,
       "component": "tour.rent",
-      "required": true
+      "required": false
     },
     "details": {
       "type": "component",
