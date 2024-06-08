@@ -109,7 +109,7 @@ export interface TourDetailsPrice extends Schema.Component {
     description: Attribute.String &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 50;
+        maxLength: 60;
       }>;
   };
 }
@@ -162,7 +162,6 @@ export interface TourActivity extends Schema.Component {
       Attribute.DefaultTo<'\u0427\u0438\u043C \u0437\u0430\u0439\u043C\u0435\u043C\u043E\u0441\u044C?'>;
     description: Attribute.RichText &
       Attribute.Required &
-      Attribute.Private &
       Attribute.SetMinMaxLength<{
         minLength: 3;
         maxLength: 1000;

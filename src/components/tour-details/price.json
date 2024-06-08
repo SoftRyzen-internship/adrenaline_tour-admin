@@ -16,7 +16,7 @@
       "type": "string",
       "required": false,
       "minLength": 3,
-      "maxLength": 50
+      "maxLength": 60
     }
   }
 }
