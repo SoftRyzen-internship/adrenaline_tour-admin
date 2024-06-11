@@ -42,12 +42,14 @@
     },
     "activities": {
       "type": "relation",
+      "required": true,
       "relation": "manyToMany",
       "target": "api::activity.activity",
       "mappedBy": "tours"
     },
     "countries": {
       "type": "relation",
+      "required": true,
       "relation": "manyToMany",
       "target": "api::country.country",
       "mappedBy": "tours"

@@ -1049,7 +1049,8 @@ export interface ApiTourTour extends Schema.CollectionType {
       'api::tour.tour',
       'manyToMany',
       'api::activity.activity'
-    >;
+    > &
+      Attribute.Required;
     countries: Attribute.Relation<
       'api::tour.tour',
       'manyToMany',
