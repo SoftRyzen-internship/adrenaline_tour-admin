@@ -10,7 +10,8 @@
     "place": {
       "type": "string",
       "maxLength": 60,
-      "minLength": 3
+      "minLength": 3,
+      "required": true
     }
   }
 }

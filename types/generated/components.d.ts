@@ -77,6 +77,7 @@ export interface TourDetailsLocation extends Schema.Component {
   };
   attributes: {
     place: Attribute.String &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
         maxLength: 60;
@@ -89,11 +90,13 @@ export interface TourDetailsMeet extends Schema.Component {
   info: {
     displayName: 'meet';
     icon: 'book';
+    description: '';
   };
   attributes: {
     title: Attribute.String &
       Attribute.DefaultTo<'\u0414\u0430\u0442\u0430 \u0456 \u043C\u0456\u0441\u0446\u0435 \u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456'>;
-    location: Attribute.Component<'tour-details.location', true>;
+    location: Attribute.Component<'tour-details.location', true> &
+      Attribute.Required;
   };
 }
 

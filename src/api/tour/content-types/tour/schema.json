@@ -42,16 +42,16 @@
     },
     "activities": {
       "type": "relation",
-      "required": true,
       "relation": "manyToMany",
       "target": "api::activity.activity",
+      "required": true,
       "mappedBy": "tours"
     },
     "countries": {
       "type": "relation",
-      "required": true,
       "relation": "manyToMany",
       "target": "api::country.country",
+      "required": true,
       "mappedBy": "tours"
     },
     "slug": {

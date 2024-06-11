@@ -1055,7 +1055,8 @@ export interface ApiTourTour extends Schema.CollectionType {
       'api::tour.tour',
       'manyToMany',
       'api::country.country'
-    >;
+    > &
+      Attribute.Required;
     slug: Attribute.UID<'api::tour.tour', 'title'> & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
     plans: Attribute.Component<'tour.activity'> & Attribute.Required;
