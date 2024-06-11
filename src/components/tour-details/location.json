@@ -2,13 +2,14 @@
   "collectionName": "components_tour_details_locations",
   "info": {
     "displayName": "location",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "place": {
       "type": "string",
-      "maxLength": 50,
+      "maxLength": 60,
       "minLength": 3
     }
   }

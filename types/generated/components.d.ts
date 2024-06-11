@@ -73,12 +73,13 @@ export interface TourDetailsLocation extends Schema.Component {
   info: {
     displayName: 'location';
     icon: 'pinMap';
+    description: '';
   };
   attributes: {
     place: Attribute.String &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 50;
+        maxLength: 60;
       }>;
   };
 }
@@ -164,7 +165,7 @@ export interface TourActivity extends Schema.Component {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 1000;
+        maxLength: 1200;
       }>;
   };
 }

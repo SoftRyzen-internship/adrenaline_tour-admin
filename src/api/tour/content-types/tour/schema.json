@@ -25,7 +25,7 @@
       "required": true,
       "unique": true,
       "minLength": 3,
-      "maxLength": 40
+      "maxLength": 50
     },
     "duration": {
       "type": "string",
@@ -38,19 +38,21 @@
       "type": "text",
       "required": true,
       "minLength": 3,
-      "maxLength": 220
+      "maxLength": 260
     },
     "activities": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::activity.activity",
-      "mappedBy": "tour"
+      "mappedBy": "tour",
+      "required": true
     },
     "countries": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::country.country",
-      "mappedBy": "tour"
+      "mappedBy": "tour",
+      "required": true
     },
     "slug": {
       "type": "uid",

@@ -1030,7 +1030,7 @@ export interface ApiTourTour extends Schema.CollectionType {
       Attribute.Unique &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 40;
+        maxLength: 50;
       }>;
     duration: Attribute.String &
       Attribute.Required &
@@ -1043,18 +1043,20 @@ export interface ApiTourTour extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 3;
-        maxLength: 220;
+        maxLength: 260;
       }>;
     activities: Attribute.Relation<
       'api::tour.tour',
       'oneToMany',
       'api::activity.activity'
-    >;
+    > &
+      Attribute.Required;
     countries: Attribute.Relation<
       'api::tour.tour',
       'oneToMany',
       'api::country.country'
-    >;
+    > &
+      Attribute.Required;
     slug: Attribute.UID<'api::tour.tour', 'title'> & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
     plans: Attribute.Component<'tour.activity'> & Attribute.Required;

@@ -16,7 +16,7 @@
       "type": "richtext",
       "required": true,
       "minLength": 3,
-      "maxLength": 1000
+      "maxLength": 1200
     }
   }
 }
