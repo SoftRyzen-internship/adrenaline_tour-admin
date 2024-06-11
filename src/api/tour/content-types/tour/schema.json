@@ -42,17 +42,15 @@
     },
     "activities": {
       "type": "relation",
-      "required": true,
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::activity.activity",
-      "mappedBy": "tour"
+      "mappedBy": "tours"
     },
     "countries": {
       "type": "relation",
-      "required": true,
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::country.country",
-      "mappedBy": "tour"
+      "mappedBy": "tours"
     },
     "slug": {
       "type": "uid",

@@ -806,9 +806,9 @@ export interface ApiActivityActivity extends Schema.CollectionType {
         minLength: 1;
         maxLength: 20;
       }>;
-    tour: Attribute.Relation<
+    tours: Attribute.Relation<
       'api::activity.activity',
-      'manyToOne',
+      'manyToMany',
       'api::tour.tour'
     >;
     createdAt: Attribute.DateTime;
@@ -882,9 +882,9 @@ export interface ApiCountryCountry extends Schema.CollectionType {
         minLength: 1;
         maxLength: 20;
       }>;
-    tour: Attribute.Relation<
+    tours: Attribute.Relation<
       'api::country.country',
-      'manyToOne',
+      'manyToMany',
       'api::tour.tour'
     >;
     createdAt: Attribute.DateTime;
@@ -1047,16 +1047,14 @@ export interface ApiTourTour extends Schema.CollectionType {
       }>;
     activities: Attribute.Relation<
       'api::tour.tour',
-      'oneToMany',
+      'manyToMany',
       'api::activity.activity'
-    > &
-      Attribute.Required;
+    >;
     countries: Attribute.Relation<
       'api::tour.tour',
-      'oneToMany',
+      'manyToMany',
       'api::country.country'
-    > &
-      Attribute.Required;
+    >;
     slug: Attribute.UID<'api::tour.tour', 'title'> & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
     plans: Attribute.Component<'tour.activity'> & Attribute.Required;
